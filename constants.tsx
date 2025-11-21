@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { Key, NumberSystem } from './types';
 import { Settings, History } from 'lucide-react';
@@ -23,10 +22,18 @@ export const SCIENTIFIC_KEYS = (isRadians: boolean, isSecond: boolean): Key[] =>
     },
     { key: 'Backspace', label: '⌫', variant: 'operator' },
 
-    // ROW 2: Cleaned up functions, added constants and modulo
+    // ROW 2: Added reciprocal trig functions as 2nd functions
     { key: isSecond ? '^(1/3)' : '^3', label: isSecond ? '∛' : <>x<sup>3</sup></>, variant: 'secondary' },
-    { key: isSecond ? 'E' : 'PI', label: isSecond ? 'e' : 'π', variant: 'secondary' },
-    { key: '%', label: '%', variant: 'secondary' },
+    { 
+        key: isSecond ? 'cot(' : 'PI', 
+        label: isSecond ? 'cot' : 'π', 
+        variant: 'secondary' 
+    },
+    { 
+        key: isSecond ? 'sec(' : '%', 
+        label: isSecond ? 'sec' : '%', 
+        variant: 'secondary' 
+    },
     { key: '(', label: '(', variant: 'secondary' },
     { key: ')', label: ')', variant: 'secondary' },
 
@@ -60,7 +67,11 @@ export const SCIENTIFIC_KEYS = (isRadians: boolean, isSecond: boolean): Key[] =>
     // ROW 6
     { key: '0', label: '0', variant: 'primary' },
     { key: '.', label: '.', variant: 'primary' },
-    { key: '!', label: 'n!', variant: 'secondary' },
+    { 
+        key: isSecond ? 'csc(' : '!', 
+        label: isSecond ? 'csc' : 'n!', 
+        variant: 'secondary' 
+    },
     isSecond
         ? { key: '^2', label: <>x<sup>2</sup></>, variant: 'secondary' }
         : { key: 'sqrt(', label: '√', variant: 'secondary' },
