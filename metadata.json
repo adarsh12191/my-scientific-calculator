@@ -1,0 +1,5 @@
+{
+  "name": "Advanced Scientific Calculator",
+  "description": "A powerful, web-based scientific calculator with features for advanced mathematics, including polynomial solving, linear systems, number system arithmetic, and a full expression parser with history. Designed with a clean, responsive UI for both desktop and mobile use.",
+  "requestFramePermissions": []
+}
